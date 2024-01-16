@@ -1,12 +1,5 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { 
-Card,
-CardContent,
-CardFooter,
-CardHeader,
-CardTitle} from './ui/card'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import top from '../assets/images/images.jpeg'
 
@@ -22,51 +15,51 @@ const TopStories = () => {
             </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Card>
-                <CardHeader>
+            <div className='shadow-md'>
+                <div className='flex flex-col space-y-1.5 py-6'>
                 <img className="w-full  h-auto object-contain rounded-xl" src={top} alt="" />
-                    <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
-                </CardHeader>
-                <CardContent>
+                <div className='text-2xl font-semibold leading-none tracking-tight'>Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div className='py-6 pr-8 pt-0'>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, libero!</p>
-                </CardContent>
-                <CardFooter>
+                </div>
+                <div className='flex items-center  pt-0'>
                     <p className="text-sm font-semibold tracking-wider">
                         READ MORE
                     </p>
                     <FontAwesomeIcon className="w-4 h-4 ml-2 text-gray-500" icon={faArrowRight} />
-                </CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>
-                <img className="w-full h-auto object-contain rounded-xl" src={top} alt=""  />
-                    <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
-                </CardHeader>
-                <CardContent>
+                </div>
+            </div>
+            <div className='shadow-md'>
+                <div className='flex flex-col space-y-1.5 py-6'>
+                    <img className="w-full h-auto object-contain rounded-xl" src={top} alt=""  />
+                    <div className='text-2xl font-semibold leading-none tracking-tight'>Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div className='py-6 pr-8 pt-0'>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, libero!</p>
-                </CardContent>
-                <CardFooter>
+                </div>
+                <div className='flex items-center  pt-0'>
                     <p className="text-sm font-semibold tracking-wider">
                         READ MORE
                     </p>
                     <FontAwesomeIcon className="w-4 h-4 ml-2 text-gray-500" icon={faArrowRight} />
-                </CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>
-                <img className="w-full h-auto object-contain rounded-xl" src={top} alt="" width={200} height={200} />
-                    <CardTitle>Lorem ipsum dolor sit amet.</CardTitle>
-                </CardHeader>
-                <CardContent>
+                </div>
+            </div>
+            <div className='shadow-md'>
+                <div className='flex flex-col space-y-1.5 py-6'>
+                    <img className="w-full h-auto object-contain rounded-xl" src={top} alt=""  />
+                    <div className='text-2xl font-semibold leading-none tracking-tight'>Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div className='py-6 pr-8 pt-0'>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, libero!</p>
-                </CardContent>
-                <CardFooter>
+                </div>
+                <div className='flex items-center  pt-0'>
                     <p className="text-sm font-semibold tracking-wider">
                         READ MORE
                     </p>
                     <FontAwesomeIcon className="w-4 h-4 ml-2 text-gray-500" icon={faArrowRight} />
-                </CardFooter>
-            </Card>
+                </div>
+            </div>
         </div>
         <div className="w-full border my-4 border-gray-200" />
     </div>

@@ -1,5 +1,7 @@
-import TopStories from "../components/TopStories"
-import TrendingSection from "../components/TrendingSection"
+import React from 'react'
+import TopStories from '../components/TopStories'
+import TrendingSection from '../components/TrendingSection'
+
 
 const Home = () => {
   return (
