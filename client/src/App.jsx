@@ -6,6 +6,11 @@ import Login from './pages/Login'
 import Navbar from './components/Navbar'
 import MenuList from './components/MenuList'
 import Footer from './components/Footer'
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.withCredentials = true
+
 
 function App() {
 
