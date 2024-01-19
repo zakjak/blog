@@ -8,7 +8,7 @@ import MenuList from './components/MenuList'
 import Footer from './components/Footer'
 import axios from 'axios'
 import Profile from './pages/Profile'
-import Add from './components/Add'
+import Add from './pages/Add'
 
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true

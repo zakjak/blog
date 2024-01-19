@@ -1,10 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/UserContext'
 import top from '../../src/assets/images/images.jpeg'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Profile = () => {
+    const [articles, setArticles] = useState([])
     const { user } = useContext(UserContext)
+
+    useEffect(() => {
+        axios.get(`/articles/${user?.id}`)
+        .then(({data}) => setArticles(data))
+    }, [user])
+
 
   return (
     <div className='w-full'>
@@ -16,7 +24,7 @@ const Profile = () => {
         <div className='w-[80%] m-auto relative mt-[10%]'>
             <div className=''>
                 <div className='flex w-full justify-between items-center'>
-                    <div className='mt-[2rem]'>
+                    <div className=''>
                         <h2 className='text-2xl'>{user?.name}</h2>
                         <p>325 post</p>
                         <h2>Bio</h2>
@@ -26,6 +34,22 @@ const Profile = () => {
                 </div>
                 <div>
                     <h2>Articles</h2>
+                    <div>
+                        {
+                            articles?.map(article => (
+                                <div className='grid grid-cols-3'>
+                                    <div>
+                                        <img src={top} alt="" />
+                                    </div>
+                                    <div>
+                                        <h2>{article?.title}</h2>
+                                        <p>{article?.cat}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                        
+                    </div>
                 </div>
             </div>
         </div>

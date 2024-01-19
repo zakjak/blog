@@ -1,4 +1,4 @@
-import express, { json } from 'express'
+import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import bcrypt from 'bcrypt'
@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import User from './models/UserModel.js'
 import cookieParser from 'cookie-parser'
 import jwt from 'jsonwebtoken'
+import PostModel from './models/PostModel.js'
 
 const app = express()
 
@@ -122,7 +123,40 @@ app.get('/profile', (req, res) => {
     
 })
 
+app.get('/profile/:id', async (req, res) => {
+    const { id } = req.params
 
+    const user = await User.findById(id)
+
+    const { name, email, _id } = user
+
+    const others = {name, email, id: _id}
+
+    res.json(others)
+})
+
+app.post('/article', async(req, res) => {
+    const { title, cat, article, owner }  = req.body
+
+    const post = await PostModel.create({
+        owner, title, cat, article
+    })
+
+    res.json(post)
+})
+
+app.get('/articles/:id', async (req, res) => {
+    const {id} = req.params
+
+    try{
+        if(id){
+            const data = await PostModel.find({owner: id})
+            res.json(data)
+        }
+    }catch(err){
+
+    }
+})
 
 const port = process.env.PORT
 app.listen(port, () => {
